@@ -1,0 +1,25 @@
+{
+  "name": "SHADOW SHIFT",
+  "short_name": "ShadowShift",
+  "description": "Change the light. Change the world. A 2D shadow-manipulation puzzle arcade game.",
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "any",
+  "background_color": "#060710",
+  "theme_color": "#060710",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["games", "puzzle"]
+}

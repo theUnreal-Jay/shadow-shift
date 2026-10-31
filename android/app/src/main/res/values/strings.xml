@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Shadow Shift</string>
+    <string name="title_activity_main">Shadow Shift</string>
+    <string name="package_name">com.theunrealjay.shadowshift</string>
+    <string name="custom_url_scheme">com.theunrealjay.shadowshift</string>
+</resources>

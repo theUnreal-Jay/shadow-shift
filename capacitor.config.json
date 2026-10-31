@@ -1,0 +1,13 @@
+{
+  "appId": "com.theunrealjay.shadowshift",
+  "appName": "Shadow Shift",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "backgroundColor": "#060710",
+    "allowMixedContent": false,
+    "webContentsDebuggingEnabled": false
+  }
+}

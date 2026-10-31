@@ -3,6 +3,7 @@
  */
 import { events } from '../core/eventManager.js';
 import { audio } from '../core/audio.js';
+import { storage } from '../core/storage.js';
 
 export const PLAYER_STATES = {
   IDLE: 'IDLE',
@@ -95,6 +96,9 @@ export class Player {
     }
 
     audio.playStep();
+    if (navigator.vibrate && storage.get('settings')?.vibration) {
+      try { navigator.vibrate(15); } catch (e) {}
+    }
     events.emit('PLAYER_STEP', { x: targetX, y: targetY });
   }
 
@@ -119,6 +123,10 @@ export class Player {
     this.state = PLAYER_STATES.CONFUSED;
     this.stateTimer = 0.45;
     audio.playRewind();
+
+    if (navigator.vibrate && storage.get('settings')?.vibration) {
+      try { navigator.vibrate([25, 30, 25]); } catch (e) {}
+    }
 
     events.emit('PLAYER_LOST_FOOTING', {
       fromX: this.gridX,

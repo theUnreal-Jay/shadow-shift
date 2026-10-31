@@ -1289,11 +1289,19 @@ button:active {
 }
 
 /* ==========================================================================
-   MOBILE & RESPONSIVE BREAKPOINTS
+   MOBILE & RESPONSIVE BREAKPOINTS (Google Play Store Mobile Optimizations)
    ========================================================================== */
 
-@media (min-width: 768px) {
-  /* On larger screens, keyboard is primary, hide mobile D-pad to keep layout sleek */
+#app {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+  overscroll-behavior: none;
+}
+
+@media (min-width: 768px) and (hover: hover) and (pointer: fine) {
+  /* On desktop with fine pointer, hide mobile D-pad */
   .mobile-dpad-panel {
     display: none;
   }
@@ -1301,18 +1309,61 @@ button:active {
 
 @media (max-width: 767px) {
   .hud-header {
+    height: 52px;
+    padding: 0 10px;
+  }
+  .hud-level-label {
+    font-size: 0.65rem;
+  }
+  .hud-level-name {
+    font-size: 0.85rem;
+    max-width: 110px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .hud-metric-pill {
+    padding: 4px 8px;
+    gap: 4px;
+  }
+  .metric-val {
+    font-size: 0.85rem;
+  }
+  .hud-controls-footer {
+    padding: 6px 10px;
+    gap: 12px;
+    justify-content: space-between;
+  }
+  .light-compass-btn {
+    width: 44px;
+    height: 38px;
+    min-width: 44px;
+    min-height: 38px;
+  }
+  .dpad-btn {
+    width: 44px;
+    height: 38px;
+    min-width: 44px;
+    min-height: 38px;
+  }
+  .splash-title, .home-title {
+    font-size: 2.1rem;
+  }
+}
+
+/* Mobile Landscape mode */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hud-header {
+    height: 42px;
     padding: 0 12px;
   }
   .hud-controls-footer {
-    padding: 8px 12px;
-    gap: 16px;
-    justify-content: space-around;
+    padding: 4px 12px;
   }
-  .light-compass-btn {
-    width: 40px;
-    height: 36px;
+  .light-compass-cluster {
+    transform: scale(0.85);
   }
-  .splash-title, .home-title {
-    font-size: 2.2rem;
+  .dpad-grid {
+    transform: scale(0.85);
   }
 }
